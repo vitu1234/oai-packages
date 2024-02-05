@@ -1,18 +1,18 @@
 apiVersion: config.porch.kpt.dev/v1alpha2
 kind: PackageVariantSet
 metadata:
-  name: regional-oai-amf
+  name: core-oai-amf
 spec:
   upstream:
     repo: oai-packages
     package: oai-amf
-    revision: main
+    revision: v2.0.0
   targets:
   - objectSelector:
       apiVersion: infra.nephio.org/v1alpha1
       kind: WorkloadCluster
       matchLabels:
-        nephio.org/site-type: regional
+        nephio.org/site-type: core
     template:
       downstream:
         package: oai-amf

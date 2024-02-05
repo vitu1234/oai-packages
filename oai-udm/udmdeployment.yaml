@@ -1,5 +1,7 @@
 apiVersion: workload.nephio.org/v1alpha1
-kind: UDMDeployment
+kind: NFDeployment
 metadata:
   name: udm-example
-  namespace: oai-cp
+  namespace: udm-example
+spec:
+  provider: udm.openairinterface.org
