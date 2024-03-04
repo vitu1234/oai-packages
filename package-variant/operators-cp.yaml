@@ -6,7 +6,7 @@ spec:
   upstream:
     repo: oai-packages
     package: oai-cp-operators
-    revision: v2.0.0
+    revision: v2.0.0-openshift
   downstream:
     repo: core
     package: oai-cp-operators
