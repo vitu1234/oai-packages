@@ -4,6 +4,7 @@ metadata: # kpt-merge: /set-annotation
   name: set-configuration
   annotations:
     internal.kpt.dev/upstream-identifier: fn.kpt.dev|StarlarkRun|default|set-configuration
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
 source: |-
   amf_ip_address = "127.0.0.1"
   gnb_n2_ip_address = "127.0.0.1"
