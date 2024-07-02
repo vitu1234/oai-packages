@@ -24,7 +24,7 @@ metadata:
     specializer.nephio.org/owner: workload.nephio.org/v1alpha1.NFDeployment.upf-example
     specializer.nephio.org/namespace: example
 spec:
-  config: '{"cniVersion":"0.3.1","name":"upf-edge-n3","plugins":[{"type":"macvlan","capabilities":{"ips":true},"master":"eth0","mode":"bridge","ipam":{"type":"static","addresses":[{"address":"172.3.0.254/24","gateway":"172.3.0.1"}]}},{"type":"tuning","capabilities":{"mac":true},"ipam":{}}]}'
+  config: '{"cniVersion":"0.3.1","name":"upf-edge-n3","plugins":[{"type":"macvlan","capabilities":{"ips":true},"master":"ens5","mode":"bridge","ipam":{"type":"static","addresses":[{"address":"10.10.136.251/20","gateway":"10.10.128.1"}]}},{"type":"tuning","capabilities":{"mac":true},"ipam":{}}]}'
 ---
 apiVersion: k8s.cni.cncf.io/v1
 kind: NetworkAttachmentDefinition
@@ -36,7 +36,7 @@ metadata:
     specializer.nephio.org/owner: workload.nephio.org/v1alpha1.NFDeployment.upf-example
     specializer.nephio.org/namespace: example
 spec:
-  config: '{"cniVersion":"0.3.1","name":"upf-edge-n4","plugins":[{"type":"macvlan","capabilities":{"ips":true},"master":"eth0","mode":"bridge","ipam":{"type":"static","addresses":[{"address":"172.1.1.253/24","gateway":"172.1.1.1"}]}},{"type":"tuning","capabilities":{"mac":true},"ipam":{}}]}'
+  config: '{"cniVersion":"0.3.1","name":"upf-edge-n4","plugins":[{"type":"macvlan","capabilities":{"ips":true},"master":"ens5","mode":"bridge","ipam":{"type":"static","addresses":[{"address":"10.10.136.251/20","gateway":"10.10.128.1"}]}},{"type":"tuning","capabilities":{"mac":true},"ipam":{}}]}'
 ---
 apiVersion: k8s.cni.cncf.io/v1
 kind: NetworkAttachmentDefinition
@@ -48,4 +48,4 @@ metadata:
     specializer.nephio.org/owner: workload.nephio.org/v1alpha1.NFDeployment.upf-example
     specializer.nephio.org/namespace: example
 spec:
-  config: '{"cniVersion":"0.3.1","name":"upf-edge-n6","plugins":[{"type":"macvlan","capabilities":{"ips":true},"master":"eth0","mode":"bridge","ipam":{"type":"static","addresses":[{"address":"172.0.1.254/24","gateway":"172.0.1.1"}]}},{"type":"tuning","capabilities":{"mac":true},"ipam":{}}]}'
+  config: '{"cniVersion":"0.3.1","name":"upf-edge-n6","plugins":[{"type":"macvlan","capabilities":{"ips":true},"master":"ens5","mode":"bridge","ipam":{"type":"static","addresses":[{"address":"10.10.142.37/20","gateway":"10.10.128.1"}]}},{"type":"tuning","capabilities":{"mac":true},"ipam":{}}]}'
