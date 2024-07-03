@@ -18,9 +18,8 @@ apiVersion: k8s.cni.cncf.io/v1
 kind: NetworkAttachmentDefinition
 metadata:
   name: amf-core-n2
-  # namespace: oaicp
+  namespace: example
   annotations:
-    config.kubernetes.io/local-config: "true"
     specializer.nephio.org/owner: workload.nephio.org/v1alpha1.NFDeployment.amf-example
     specializer.nephio.org/namespace: example
 spec:

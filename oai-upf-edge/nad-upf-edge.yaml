@@ -18,34 +18,39 @@ apiVersion: k8s.cni.cncf.io/v1
 kind: NetworkAttachmentDefinition
 metadata:
   name: upf-edge-n3
-  # namespace: oai-upf
+  namespace: example
   annotations:
-    config.kubernetes.io/local-config: "true"
-    specializer.nephio.org/owner: workload.nephio.org/v1alpha1.NFDeployment.upf-example
     specializer.nephio.org/namespace: example
+    specializer.nephio.org/owner: workload.nephio.org/v1alpha1.NetworkAttachmentDefinition.upf-example
 spec:
-  config: '{"cniVersion":"0.3.1","name":"upf-edge-n3","plugins":[{"type":"macvlan","capabilities":{"ips":true},"master":"ens5","mode":"bridge","ipam":{"type":"static","addresses":[{"address":"10.10.136.251/20","gateway":"10.10.128.1"}]}},{"type":"tuning","capabilities":{"mac":true},"ipam":{}}]}'
+  config: '{ "cniVersion": "0.3.1", "plugins": [ { "type": "ipvlan", "capabilities":
+    { "ips": true }, "master": "ens5", "mode": "l2", "ipam": { "type": "static", "routes":
+    [ { "dst": "0.0.0.0/0", "gw": "10.100.50.238" } ] } } ] }'
+
 ---
 apiVersion: k8s.cni.cncf.io/v1
 kind: NetworkAttachmentDefinition
 metadata:
   name: upf-edge-n4
-  # namespace: oai-upf
+  namespace: example
   annotations:
-    config.kubernetes.io/local-config: "true"
-    specializer.nephio.org/owner: workload.nephio.org/v1alpha1.NFDeployment.upf-example
     specializer.nephio.org/namespace: example
+    specializer.nephio.org/owner: workload.nephio.org/v1alpha1.NetworkAttachmentDefinition.upf-example
 spec:
-  config: '{"cniVersion":"0.3.1","name":"upf-edge-n4","plugins":[{"type":"macvlan","capabilities":{"ips":true},"master":"ens5","mode":"bridge","ipam":{"type":"static","addresses":[{"address":"10.10.136.251/20","gateway":"10.10.128.1"}]}},{"type":"tuning","capabilities":{"mac":true},"ipam":{}}]}'
+  config: '{ "cniVersion": "0.3.1", "plugins": [ { "type": "ipvlan", "capabilities":
+    { "ips": true }, "master": "ens5", "mode": "l2", "ipam": { "type": "static", "routes":
+    [ { "dst": "0.0.0.0/0", "gw": "10.100.50.246" } ] } } ] }'
+
 ---
 apiVersion: k8s.cni.cncf.io/v1
 kind: NetworkAttachmentDefinition
 metadata:
   name: upf-edge-n6
-  # namespace: oai-upf
+  namespace: example
   annotations:
-    config.kubernetes.io/local-config: "true"
-    specializer.nephio.org/owner: workload.nephio.org/v1alpha1.NFDeployment.upf-example
     specializer.nephio.org/namespace: example
+    specializer.nephio.org/owner: workload.nephio.org/v1alpha1.NetworkAttachmentDefinition.upf-example
 spec:
-  config: '{"cniVersion":"0.3.1","name":"upf-edge-n6","plugins":[{"type":"macvlan","capabilities":{"ips":true},"master":"ens5","mode":"bridge","ipam":{"type":"static","addresses":[{"address":"10.10.142.37/20","gateway":"10.10.128.1"}]}},{"type":"tuning","capabilities":{"mac":true},"ipam":{}}]}'
+  config: '{ "cniVersion": "0.3.1", "plugins": [ { "type": "ipvlan", "capabilities":
+    { "ips": true }, "master": "ens5", "mode": "l2", "ipam": { "type": "static", "routes":
+    [ { "dst": "0.0.0.0/0", "gw": "10.10.128.1" } ] } } ] }'
