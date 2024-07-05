@@ -4,7 +4,6 @@ metadata:
   name: smf-core-n4
   namespace: example
   annotations:
-    specializer.nephio.org/owner: workload.nephio.org/v1alpha1.NFDeployment.smf-example
-    specializer.nephio.org/namespace: example
+    specializer.nephio.org/owner: req.nephio.org/v1alpha1.Interface.n4
 spec:
   config: '{"cniVersion":"0.3.1","name":"smf-core-n4","plugins":[{"type":"macvlan","capabilities":{"ips":true},"master":"ens5","mode":"bridge","ipam":{"type":"static","addresses":[{"address":"10.10.136.251/20","gateway":"10.10.128.1"}]}},{"type":"tuning","capabilities":{"mac":true},"ipam":{}}]}'
