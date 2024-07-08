@@ -9,7 +9,4 @@ metadata:
     argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
 spec:
   networkInstance:
-    name: vpc-internet
-  pools:
-    - name: pool1
-      prefixLength: 20
+    name: default

@@ -9,6 +9,4 @@ metadata:
     argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
 spec:
   networkInstance:
-    name: vpc-internet
-  cniType: ipvlan
-  attachmentType: vlan
+    name: default
