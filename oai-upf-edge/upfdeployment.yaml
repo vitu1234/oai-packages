@@ -1,37 +1,41 @@
 apiVersion: workload.nephio.org/v1alpha1
 kind: NFDeployment
-metadata:
+metadata: 
   name: upf-example
   namespace: upf-example
 spec:
   provider: upf.openairinterface.org
+  capacity:
+    maxUplinkThroughput: 1G
+    maxDownlinkThroughput: 1G
+  interfaces:
+    - name: n3
+      ipv4:
+        address: 10.10.129.11/20
+        gateway: 10.128.1.1
+    - name: n4
+      ipv4:
+        address: 10.10.129.12/20
+        gateway: 10.128.1.1
+    - name: n6
+      ipv4:
+        address: 10.10.129.13/20
+        gateway: 10.128.1.1
+  networkInstances:
+    - name: vpc-ran
+      interfaces:
+        - n3
+    - name: vpc-internal
+      interfaces:
+        - n4
+    - name: vpc-internet
+      interfaces:
+        - n6
+      dataNetworks:
+        - name: internet
+          pool:
+            - prefix: 10.10.0.0/16
   parametersRefs:
   - name: oai-upf-config
     apiVersion: workload.nephio.org/v1alpha1
     kind: NFConfig
-    interfaces:
-  - name: n3
-    ipv4:
-      address: 10.10.129.11/20
-      gateway: 10.128.1.1
-    vlanID: 3
-  - name: n4
-    ipv4:
-      address: 10.10.129.12/20
-      gateway: 10.128.1.1
-    vlanID: 4
-  - name: n6
-    ipv4:
-      address: 10.10.129.13/20
-      gateway: 10.128.1.1
-    vlanID: 6
-  networkInstances:
-  - name: vpc-internal
-    interfaces:
-    - n4
-  - name: vpc-internet
-    interfaces:
-    - n6
-  - name: vpc-ran
-    interfaces:
-    - n3
