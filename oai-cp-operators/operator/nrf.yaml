@@ -115,7 +115,7 @@ metadata:
 data:
   nrf.yaml: |
     nfInterfaces:
-      sbi: 'ens5'
+      sbi: 'eth0'
     ports:
       - name: 'http'
         port: 80
@@ -130,7 +130,7 @@ data:
     logLevel: info
     image: 'docker.io/oaisoftwarealliance/oai-nrf:v2.0.1'
     nfInterfaces:
-      sbi: 'ens5'
+      sbi: 'eth0'
     ports:
       - name: 'http'
         port: 80
@@ -201,7 +201,7 @@ spec:
           - name: 'KUBERNETES_BASE_URL'
             value: 'https://kubernetes.default.svc'
           - name: 'SVC_TYPE'
-            value: 'NodePort'
+            value: 'LoadBalancer'
           # - name: 'LOADBALANCER_IP'
           #   value: '172.18.31.200'
         volumeMounts:

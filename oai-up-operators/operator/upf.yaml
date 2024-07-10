@@ -128,11 +128,11 @@ data:
         port: 80
         protocol: TCP
     nfInterfaces:
-      sbi: 'ens5'
+      sbi: 'eth0'
       n3: 'n3'
       n4: 'n4'
       n6: 'n6'
-      n9: 'ens5'
+      n9: 'eth0'
     compute:
       req:
         cpu: '100m'
