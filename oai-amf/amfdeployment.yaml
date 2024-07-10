@@ -5,8 +5,18 @@ metadata:
   namespace: amf-example
 spec:
   provider: amf.openairinterface.org
+  capacity:
+    maxSubscribers: 200
+  interfaces:
+  - name: n2
+    ipv4:
+      address: 10.10.140.115/20
+      gateway: 10.10.128.1
+  networkInstances:
+  - name: vpc-ran
+    interfaces:
+    - n2
   parametersRefs:
   - name: oai-amf-config
     apiVersion: workload.nephio.org/v1alpha1
     kind: NFConfig
-    

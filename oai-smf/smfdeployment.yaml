@@ -5,6 +5,18 @@ metadata:
   namespace: smf-example
 spec:
   provider: smf.openairinterface.org
+  capacity:
+    maxNFConnections: 10
+    maxSessions: 500
+  interfaces:
+  - name: n4
+    ipv4:
+      address: 10.10.140.116/20
+      gateway: 10.10.128.1
+  networkInstances:
+  - name: vpc-internal
+    interfaces:
+    - n4
   parametersRefs:
   - name: oai-smf-config
     apiVersion: workload.nephio.org/v1alpha1
