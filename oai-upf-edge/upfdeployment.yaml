@@ -34,7 +34,7 @@ spec:
       dataNetworks:
         - name: internet
           pool:
-            - prefix: 10.10.0.0/16
+            - prefix: 10.10.0.0/20
   parametersRefs:
   - name: oai-upf-config
     apiVersion: workload.nephio.org/v1alpha1

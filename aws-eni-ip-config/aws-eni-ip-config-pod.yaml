@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: aws-eni-ip-config
+spec:
+  restartPolicy: Never  # Ensure pod does not restart after completion
+  initContainers:
+  - name: init-assign-ips
+    image: amazonlinux:2
+    command: ["/bin/bash", "-c", "/assign-ips.sh"]
+    volumeMounts:
+    - name: aws-cli
+      mountPath: /assign-ips.sh
+      subPath: assign-ips.sh
+      readOnly: true  # Ensure the script is mounted read-only
+  containers:
+  - name: myapp-container
+    image: busybox:1.28
+    command: ['sh', '-c', 'exit']
+  volumes:
+  - name: aws-cli
+    configMap:
+      name: aws-cli-config
+      defaultMode: 0777
