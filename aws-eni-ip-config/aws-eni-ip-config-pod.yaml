@@ -20,5 +20,5 @@ spec:
   volumes:
   - name: aws-cli
     configMap:
-      name: aws-cli-config
+      name: aws-eni-ip-config
       defaultMode: 0777
