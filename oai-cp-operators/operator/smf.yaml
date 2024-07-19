@@ -115,7 +115,7 @@ metadata:
 data:
   smf.yaml: |
     nad: 
-      parent: 'eth0'
+      parent: 'ens5'
       create: False
     nfInterfaces:
       n4: 'n4'
