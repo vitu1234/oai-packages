@@ -11,14 +11,8 @@ spec:
           "ips": true
         },
       "master": "ens5",
-      "mode": "l2",
+      "mode": "l3",
       "ipam": {
-        "type": "static",
-        "addresses": [
-          {
-            "address": " 192.168.1.149/24",
-            "gateway": " 192.168.1.1"
-          }
-        ]
+        "type": "static"
       }
     }'
