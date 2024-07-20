@@ -10,7 +10,7 @@ spec:
   interfaces:
   - name: n2
     ipv4:
-      address: 192.168.8.43/24
+      address: 192.168.8.53/24
       gateway: 192.168.8.1
   networkInstances:
   - name: vpc-ran

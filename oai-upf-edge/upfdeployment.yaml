@@ -9,32 +9,32 @@ spec:
     maxUplinkThroughput: 1G
     maxDownlinkThroughput: 1G
   interfaces:
-    - name: n3
-      ipv4:
-        address: 192.168.1.185/24
-        gateway: 192.168.1.1
-    - name: n4
-      ipv4:
-        address: 192.168.9.202/24
-        gateway: 192.168.9.1
-    - name: n6
-      ipv4:
-        address: 192.168.8.14/24
-        gateway: 192.168.8.1
+  - name: n3
+    ipv4:
+      address: 192.168.1.111/24
+      gateway: 192.168.1.1
+  - name: n4
+    ipv4:
+      address: 192.168.9.203/24
+      gateway: 192.168.9.1
+  - name: n6
+    ipv4:
+      address: 192.168.8.15/24
+      gateway: 192.168.8.1
   networkInstances:
-    - name: vpc-ran
-      interfaces:
-        - n3
-    - name: vpc-internal
-      interfaces:
-        - n4
-    - name: vpc-internet
-      interfaces:
-        - n6
-      dataNetworks:
-        - name: internet
-          pool:
-            - prefix: 192.168.0.0/20
+  - name: vpc-ran
+    interfaces:
+    - n3
+  - name: vpc-internal
+    interfaces:
+    - n4
+  - name: vpc-internet
+    interfaces:
+    - n6
+    dataNetworks:
+    - name: internet
+      pool:
+      - prefix: 192.168.0.0/20
   parametersRefs:
   - name: oai-upf-config
     apiVersion: workload.nephio.org/v1alpha1
