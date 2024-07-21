@@ -4,4 +4,4 @@ metadata:
   name: upf-example-n6
   namespace: upf-example
 spec:
-  config: config: '{ "cniVersion": "0.3.1", "type": "ipvlan", "capabilities": { "ips": true }, "master": "ens7", "mode": "l3", "ipam": { "type": "static" } }'
+  config: '{ "cniVersion": "0.3.1", "type": "ipvlan", "capabilities": { "ips": true }, "master": "ens7", "mode": "l3", "ipam": { "type": "static" } }'
