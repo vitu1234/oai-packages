@@ -1,5 +1,4 @@
----
-apiVersion: workload.nephio.org/v1alpha1
+piVersion: workload.nephio.org/v1alpha1
 kind: NFConfig
 metadata:
   name: oai-upf-config

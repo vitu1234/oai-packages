@@ -18,15 +18,6 @@ replacements:
     options:
       delimiter: '-'
       index: 1
-
-  - select:
-      kind: NetworkAttachmentDefinition
-    fieldPaths:
-    - metadata.name
-    options:
-      delimiter: '-'
-      index: 1
-  
   - select:
       kind: Interface
     fieldPaths:
@@ -36,20 +27,6 @@ replacements:
       index: 1
   - select:
       kind: Capacity
-    fieldPaths:
-    - metadata.annotations.[specializer.nephio.org/owner]
-    options:
-      delimiter: '-'
-      index: 1
-  - select:
-      kind: DataNetwork
-    fieldPaths:
-    - metadata.annotations.[specializer.nephio.org/owner]
-    options:
-      delimiter: '-'
-      index: 1
-  - select:
-      kind: NFConfig
     fieldPaths:
     - metadata.annotations.[specializer.nephio.org/owner]
     options:

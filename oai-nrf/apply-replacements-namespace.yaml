@@ -7,11 +7,21 @@ metadata:
     argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
 replacements:
 - source:
-    kind: ConfigMap
-    name: namespace
-    fieldPath: data.namespace
+    kind: WorkloadCluster
+    name: workload-cluster
+    fieldPath: spec.clusterName
   targets:
+  - select:
+      kind: NFDeployment
+    fieldPaths:
+    - metadata.name
+    options:
+      delimiter: '-'
+      index: 1
   - select:
       kind: Interface
     fieldPaths:
-    - metadata.annotations.[specializer.nephio.org/namespace]
+    - metadata.annotations.[specializer.nephio.org/owner]
+    options:
+      delimiter: '-'
+      index: 1
