@@ -19,7 +19,7 @@ spec:
       gateway: 192.168.9.1
   - name: n6
     ipv4:
-      address: 192.168.8.15/24
+      address: 192.168.8.16/24
       gateway: 192.168.8.1
   networkInstances:
   - name: vpc-ran

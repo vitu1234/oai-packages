@@ -1,4 +1,4 @@
-apiVersion: "k8s.cni.cncf.io/v1"
+ apiVersion: "k8s.cni.cncf.io/v1"
 kind: NetworkAttachmentDefinition
 metadata:
   name: amf-example-n2
@@ -10,7 +10,7 @@ spec:
       "capabilities": {
           "ips": true
         },
-      "master": "ens6",
+      "master": "ens7",
       "mode": "l3",
       "ipam": {
         "type": "static"
