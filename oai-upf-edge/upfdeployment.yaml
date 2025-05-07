@@ -11,16 +11,16 @@ spec:
   interfaces:
   - name: n3
     ipv4:
-      address: 192.168.1.111/24
-      gateway: 192.168.1.1
+      address: 192.168.1.111/24 #UPF_N3_IP
+      gateway: 192.168.1.1 #UPF_N3_GW
   - name: n4
     ipv4:
-      address: 192.168.9.203/24
-      gateway: 192.168.9.1
+      address: 192.168.9.203/24 #UPF_N4_IP
+      gateway: 192.168.9.1 #UPF_N4_GW
   - name: n6
     ipv4:
-      address: 192.168.8.16/24
-      gateway: 192.168.8.1
+      address: 192.168.8.16/24 #UPF_N6_IP
+      gateway: 192.168.8.1 #UPF_N6_GW
   networkInstances:
   - name: vpc-ran
     interfaces:
