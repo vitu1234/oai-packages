@@ -10,7 +10,7 @@ spec:
       "capabilities": {
           "ips": true
         },
-      "master": "ens8",
+      "master": "ens7",
       "mode": "l3",
       "ipam": {
         "type": "static"
