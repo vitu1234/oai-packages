@@ -115,7 +115,7 @@ metadata:
 data:
   amf.yaml: |
     nad: 
-      parent: 'ens5'
+      parent: 'eth0'
       create: False
     # these ports are here for creating the kube-svc should be same for the nf
     nfInterfaces:
