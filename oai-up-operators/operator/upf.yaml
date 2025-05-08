@@ -115,7 +115,7 @@ metadata:
 data:
   upf.yaml: |
     nad: 
-      parent: 'ens5'
+      parent: 'eth0'
       create: False
     ports:
       - name: 'n3n9'
@@ -143,7 +143,7 @@ data:
     logLevel: debug
     image: 'docker.io/oaisoftwarealliance/oai-upf:v2.0.1'
     fqdn:
-      nrf: 'ip-10-10-132-221.ap-northeast-2.compute.internal'
+      nrf: '172.18.31.200'
       smf: '127.0.0.1'
 ---
 apiVersion: v1
